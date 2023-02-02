@@ -45,7 +45,7 @@ const CommonNav = () => {
       <div>
         <img
           style={{ cursor: "pointer" }}
-          onClick={() => navigate("/hero")}
+          onClick={() => navigate("/home")}
           src={logo}
           height="40px"
           width="120px"
