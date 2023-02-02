@@ -1,0 +1,20 @@
+.SignWrapper{
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 60px;
+    margin-bottom: 50px;
+}
+.signin-btn{
+    width: 100%;
+    background-color: red;
+    color: #ffff;
+    border: 0;
+    padding: 12px;
+}
+.signin-btn:is(:hover, :focus){
+    background-color: red;
+}
+@media (max-width:778px){
+    .SignWrapper{
+        padding: 50px 22px;
+    }
+}

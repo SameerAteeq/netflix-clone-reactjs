@@ -1,0 +1,36 @@
+.btn{
+    background-color: red;
+    color: #ffff;
+    padding: 6px 12px;
+    border: 0;
+}
+
+.nav-input{
+    background-color: red;
+}
+.navBlack{
+    background-color: rgba(0,0,0,0.75);
+}
+.features{
+    display: flex;
+    align-items: center;
+}
+
+.input-class{
+    width: 75%;
+    padding: 10px;
+}
+.mid-content{
+    max-width: 670px;
+    margin-top: 10%;
+   padding-bottom: 10%;
+}
+@media (max-width:952px) {
+    .features{
+        flex-direction: column;
+        gap: 12px;
+    }
+    .input-class{
+        width: 100%;
+    }
+}
