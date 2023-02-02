@@ -10,7 +10,8 @@ import Loader from "../../common/loader";
 const SignIn = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -39,23 +40,25 @@ const SignIn = () => {
           <Row className="justify-content-center  py-5">
             <Col className="SignWrapper my-5" xs={10} md={7} lg={5}>
               <h1 className="mb-4">Sign In</h1>
-              <Form.Control
-                style={{ background: "#333", border: 0, color: "#fff" }}
-                className="mb-4 p-3"
-                placeholder="Email address"
-                type="email"
-                required
-              />
-              <Form.Control
-                style={{ background: "#333", border: 0, color: "#fff" }}
-                className="mb-4 p-3"
-                placeholder="Password"
-                type="password"
-                required
-              />
-              <Button onClick={handleClick} className="signin-btn">
-                Sign In
-              </Button>
+              <Form onSubmit={handleClick}>
+                <Form.Control
+                  style={{ background: "#333", border: 0, color: "#fff" }}
+                  className="mb-4 p-3"
+                  placeholder="Email address"
+                  type="email"
+                  required
+                />
+                <Form.Control
+                  style={{ background: "#333", border: 0, color: "#fff" }}
+                  className="mb-4 p-3"
+                  placeholder="Password"
+                  type="password"
+                  required
+                />
+                <Button type="submit" className="signin-btn">
+                  Sign In
+                </Button>
+              </Form>
               <div>
                 <p className="d-flex align-items-center gap-2 my-2">
                   New to Netflix?{" "}

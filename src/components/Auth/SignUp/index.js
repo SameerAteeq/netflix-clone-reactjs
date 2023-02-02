@@ -10,7 +10,8 @@ import Loader from "../../common/loader";
 const SignUp = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -39,30 +40,32 @@ const SignUp = () => {
           <Row className="justify-content-center  ">
             <Col className="SignWrapper pb-5" xs={10} md={7} lg={5}>
               <h1 className="mb-4">Sign Up</h1>
-              <Form.Control
-                style={{ background: "#333", border: 0, color: "#fff" }}
-                className="mb-4 p-3"
-                placeholder="Name"
-                type="text"
-                required
-              />
-              <Form.Control
-                style={{ background: "#333", border: 0, color: "#fff" }}
-                className="mb-4 p-3"
-                placeholder="Email address"
-                type="email"
-                required
-              />
-              <Form.Control
-                style={{ background: "#333", border: 0, color: "#fff" }}
-                className="mb-4 p-3"
-                placeholder="Password"
-                type="password"
-                required
-              />
-              <Button onClick={handleClick} className="signin-btn">
-                Sign Up
-              </Button>
+              <Form onSubmit={handleClick}>
+                <Form.Control
+                  style={{ background: "#333", border: 0, color: "#fff" }}
+                  className="mb-4 p-3"
+                  placeholder="Name"
+                  type="text"
+                  required
+                />
+                <Form.Control
+                  style={{ background: "#333", border: 0, color: "#fff" }}
+                  className="mb-4 p-3"
+                  placeholder="Email address"
+                  type="email"
+                  required
+                />
+                <Form.Control
+                  style={{ background: "#333", border: 0, color: "#fff" }}
+                  className="mb-4 p-3"
+                  placeholder="Password"
+                  type="password"
+                  required
+                />
+                <Button type="submit" className="signin-btn">
+                  Sign Up
+                </Button>
+              </Form>
               <div>
                 <p className="d-flex align-items-center gap-2 my-2">
                   Already a user?{" "}
